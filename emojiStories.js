@@ -4,71 +4,79 @@ const emojis = [
     '🐧','🦄','🦇','🌲','🎄','🌊','🍓','🍍','🥯','🌭',
     '🍕','🍣','🥡','🤸','🎯','🧨','🔮','💉','🦠','❤️',
     '🧡','💛','💚','💙','💜','☢️','🚫','💯','🔱','🎊',
-    '😂','😋','🐻','🐷','🍑','💎','X'
+    '😂','😋','🐻','🐷','🍑','💎'
 ]
+let emojiString =''
 
 let emojiBanner = document.getElementById("emojis")
 emojiBanner.textContent = emojis
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
-console.log("Working....")
-
 let number = document.getElementById("story-length-input")
-
-number.addEventListener('change', () =>{
-    console.log(number)
-    console.log(number.value)
- 
-})
-
-
 let descri = document.getElementById("description-input")
-descri.addEventListener('change', () =>{
-    console.log(descri)
-    console.log(descri.value)
-})
 
+let textArea = document.getElementById("emojiHistory")
+let orderList = document.createElement('ol')
+textArea.appendChild(orderList)
 
+let generate = document.getElementById("generate-story-btn")
+let submit = document.getElementById("submit-description-btn")
 
+let randomStory = document.querySelector("#emoji-story")
+let historyTitle = document.getElementById("history-title")
 
-
-
-let submit = document.getElementById("generate-story-btn")
-
-submit.addEventListener('click', (evn) =>{
+generate.addEventListener('click', (evn) =>{
     evn.preventDefault()
 
-    console.log("I was clicked")
-    let randomStory = document.querySelector("#emoji-story")
+    //let randomStory = document.querySelector("#emoji-story")
     console.log(randomStory.textContent)
     console.log(`num: ${number.value}`)
-    console.log(getRandom(number.value,emojis))
+   
     
-
+    randomStory.textContent = getRandom(number.value,emojis,orderList)
+  
 
 })
 
+submit.addEventListener('click', (even)=>{
+    even.preventDefault()
+  
+    let list = document.createElement('li')
+    orderList.appendChild(list)
+    list.textContent = `${descri.value} \f ${randomStory.textContent}`
+    let n = orderList.childElementCount
+    if(n === 1) 
+    {historyTitle.textContent = `${n} Saved Story`}
+    else 
+    {historyTitle.textContent = `${n} Saved Stories`}
 
+    
+
+})
 
 
 function getRandom(){
 
     let emojiString = ''
-    console.log(`num fn: ${number.value}`)
-    console.log(`emojis: ${emojis}`)
-    console.log(`length: ${emojis.length}`)
-    for (let i=1; i<number.value; i++){
+    for (let i=0; i<number.value; i++){
     let randomIndex = Math.floor(Math.random() * Math.floor(emojis.length));
-    
-    console.log(randomIndex)
-
     emojiString +=emojis[randomIndex]
     }
 
+ 
+    // let list = document.createElement('li')
+    // orderList.appendChild(list)
+    // list.textContent = `${descri.value} \f ${emojiString}`
+
+
     return emojiString
 }
+
+
+
+   
+
 
 
 

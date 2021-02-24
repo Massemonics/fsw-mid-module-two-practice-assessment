@@ -15,16 +15,17 @@
     
       <div>
         <div id="emojis" class="shadow"></div>
-        <h3 class="titles">History</h3>
-        <div class="shadow"><textarea name="" id="emojiHistory" cols="30" rows="10"></textarea></div>
+        <h2 class="titles" id="history-title">0 Saved Stories</h2>
+        <div class="shadow" id="emojiHistory" ></div>
       </div>
     <h3 class="titles">Story Length</h3>
-    <form class="shadow form" action="">
+    <div class="shadow form" action="">
       <input type="number" name="" id="story-length-input" placeHolder="Enter a number...">
       <input type="text" id="description-input">
-      <button type="submit" id="generate-story-btn">Submit</button>
-    </form>
-    <h3 class="titles" id="history-title">My Story</h3>
+      <button type="submit" id="generate-story-btn">Generate Story</button>
+      <button type="submit" id="submit-description-btn">Submit Description</button>
+    </div>
+    <h3 class="titles" >My Story</h3>
     <form  class="shadow form" action="">
       <p id="emoji-story">emoji</p>
     </form>
