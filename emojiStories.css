@@ -1,0 +1,81 @@
+body {
+    margin: 20px;
+    padding: 15px;
+    border: solid black 2px;
+    border-radius: 18px/54px;
+
+    font-size: 62.5%;
+
+}
+
+.shadow{
+    width: 95%;
+    max-height: 400px;
+    margin: auto;
+    position : relative;
+    border-radius: 10px;
+
+    box-shadow:
+  0 1.5px 4.4px rgba(0, 0, 0, 0.158),
+  0 3.8px 11.1px rgba(0, 0, 0, 0.226),
+  0 7.8px 22.7px rgba(0, 0, 0, 0.284),
+  0 16.1px 46.7px rgba(0, 0, 0, 0.352),
+  0 44px 128px rgba(0, 0, 0, 0.51)
+
+}
+
+#emojiHistory{
+    width: 99.2%;
+    max-height: 400px;
+    margin: auto;
+    position: relative;
+    padding: -10px;
+    border-radius: 10px;
+}
+
+.titles{
+    font-size: 3.6rem;
+    font-size: 36px;
+}
+
+#maintitle{
+    font-size: 4.8rem;
+    font-size:48px;
+    text-align: center;
+    text-decoration: solid;
+    color: rgb(34, 199, 144);
+}
+
+#emojis{
+    font-size: 4.4rem;
+    font-size: 44px;
+    border-radius: 10px;
+}
+
+.form{
+    display: block;
+    font-size: 3.6rem;
+    font-size: 36px;
+    width: 75%;
+    margin: auto;
+}
+
+#emoji-story{
+    font-size: 3.2rem;
+    font-size: 32px;
+    text-align: center;
+}
+
+#story-length-input, #generate-story-btn{
+    width: 25%;
+
+    font-size: 2.0rem;
+    font-size: 20px;
+    
+}
+
+#description-input{
+    width: 40%;
+    font-size: 2.0rem;
+    font-size: 20px;
+}
